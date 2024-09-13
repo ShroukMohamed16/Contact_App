@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity(),OnContactItemClick {
 
     private fun validateInputs():Boolean{
        return listOf(
-            validatePhone(),
-            validateName()
+            validateName(),
+            validatePhone()
         ).all { it }
     }
 
@@ -53,14 +53,19 @@ class MainActivity : AppCompatActivity(),OnContactItemClick {
         if(binding.nameEt.text.isNullOrBlank()) {
             binding.nameEt.error = "Please Enter Contact Name "
             return false
+        }else{
+            if(binding.nameEt.text.toString().length < 3){
+                binding.nameEt.error = "Invalid Name"
+                return false
+            }
         }
         return true
 
     }
 
     private fun validatePhone():Boolean{
-        if(binding.nameEt.text.isNullOrBlank()) {
-            binding.nameEt.error = "Please Enter Contact Name "
+        if(binding.phoneEt.text.isNullOrBlank()) {
+            binding.phoneEt.error = "Please Enter Contact Name "
             return false
         }else{
             val regex = "^01[0125]\\d{8}$".toRegex()
@@ -68,7 +73,6 @@ class MainActivity : AppCompatActivity(),OnContactItemClick {
                 binding.phoneEt.error = "Invalid Phone"
                 return false
             }
-
         }
         return true
     }
