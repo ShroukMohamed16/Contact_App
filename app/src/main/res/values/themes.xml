@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ContactApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+    </style>
+
+    <style name="Theme.ContactApp" parent="Base.Theme.ContactApp" />
+    <style name="roundedImageView" parent="">
+        <item name="cornerSizeBottomRight">30dp</item>
+        <item name="cornerSizeBottomLeft">30dp</item>
+    </style>
+    <style name="circularImageView" parent="">
+
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50dp</item>
+
+    </style>
+</resources>
